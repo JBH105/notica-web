@@ -90,6 +90,7 @@ export default function App() {
 
       <footer className="footer" id="contact">
         <div className="wrap footer-in">
+          <img className="footer-family" src={asset('assets/family-soda.svg')} alt="A family enjoying Notica soda" loading="lazy" />
           <img className="footer-logo" src={asset('assets/noticaWhiteLogo.webp')} alt="Notica" loading="lazy" />
           <h5>{footer.company}</h5>
           <p>{footer.address}</p>

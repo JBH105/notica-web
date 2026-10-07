@@ -413,3 +413,5 @@ button { font: inherit; cursor: pointer; }
 .innov-sign span { font-size: 14px; color: var(--muted); }
 @media (min-width: 640px) { .mach-stats { grid-template-columns: repeat(4, 1fr); } .plans { grid-template-columns: 1fr 1fr; } .why-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 900px) { .mach-top { grid-template-columns: 1fr 1fr; } .innov { padding: 40px; } }
+
+.footer-family { width: min(100%, 560px); height: auto; margin: -8px auto -6px; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
