@@ -62,9 +62,9 @@ export function Hero() {
           </div>
         </div>
         <div className="hero-art">
-          <img className="hero-main" src={asset('assets/hero/juice-9-2.png')} alt="Notica soda shake" fetchPriority="high" />
-          <img className="hero-leaf l1" src={asset('assets/hero/s10-mint-1.png')} alt="" aria-hidden="true" />
-          <img className="hero-leaf l2" src={asset('assets/hero/s10-lemmon-2.png')} alt="" aria-hidden="true" />
+          <img className="hero-main" src={asset('assets/hero/juice-9-2.webp')} width="700" height="724" alt="Notica soda shake" fetchPriority="high" decoding="async" />
+          <img className="hero-leaf l1" src={asset('assets/hero/s10-mint-1.webp')} alt="" aria-hidden="true" />
+          <img className="hero-leaf l2" src={asset('assets/hero/s10-lemmon-2.webp')} alt="" aria-hidden="true" />
         </div>
       </div>
       <ul className="hero-stats wrap">
