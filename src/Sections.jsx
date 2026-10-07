@@ -246,7 +246,7 @@ export function Roi() {
           <p className="roi-desc">{roi.desc}</p>
           <p className="roi-time">{roi.timeline}</p>
           <p className="roi-tag">{roi.tag}</p>
-          <a className="btn btn-light" href={asset('noticaProduct.pdf')} download="noticaProduct.pdf">{Icon.dl} Get Started Today</a>
+          <a className="btn btn-light" href={asset('Notica-The-Taste-of-Legends.pdf')} download="Notica-The-Taste-of-Legends.pdf">{Icon.dl} Get Started Today</a>
         </Reveal>
 
         <SectionHead title={roi.projectionTitle}><p className="muted">{roi.projectionText}</p></SectionHead>
@@ -277,7 +277,7 @@ export function Kit() {
       <div className="wrap">
         <SectionHead title={<>Startup <em>Franchise Kit</em></>}>
           <p className="muted">{kit.intro}</p>
-          <a className="btn btn-red" href={asset('newNotica.pdf')} download="newNotica.pdf">{Icon.dl} Download PDF</a>
+          <a className="btn btn-red" href={asset('Notica-The-Taste-of-Legends.pdf')} download="Notica-The-Taste-of-Legends.pdf">{Icon.dl} Download PDF</a>
         </SectionHead>
         <div className="kit-grid">
           {kit.items.map(([src, label]) => (
