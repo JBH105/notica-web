@@ -57,7 +57,7 @@ export const about = {
   ],
   closing: [
     'The Indian beverage market is rapidly shifting from traditional soft drinks toward refreshing, fusion, and customized local flavors — and NOTICA is perfectly positioned to meet this evolving demand.',
-    'Our brand delivers high-quality, hygienic, and instant multi-flavor sodas and shakes through advanced commercial dispensing systems designed to provide maximum output within minimal space.',
+    'Our brand delivers high-quality, hygienic, and instant multi-flavor sodas through advanced commercial dispensing systems designed to provide maximum output within minimal space.',
     'As an investor or franchise partner, NOTICA offers an excellent low-investment, high-return (ROI) business opportunity backed by growing consumer demand and a scalable business model.',
   ],
   certs: [
