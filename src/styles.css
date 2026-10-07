@@ -432,7 +432,7 @@ button { font: inherit; cursor: pointer; }
 
 /* google badge */
 .g-badge { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 6px; padding: 6px 14px 6px 10px; background: #fff; border: 1px solid var(--line); border-radius: 999px; font-weight: 600; font-size: 13.5px; color: var(--ink); box-shadow: 0 2px 8px rgba(0, 0, 0, .06); }
-.g-link { display: inline-block; margin-top: 10px; font-weight: 600; font-size: 14px; color: var(--red); text-decoration: none; }
+.g-link { display: inline-flex; margin-top: 12px; padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 14px; color: #fff; text-decoration: none; background: linear-gradient(135deg, var(--red), var(--red-deep)); box-shadow: 0 6px 16px rgba(200, 16, 46, .3); }
 
 /* about: glance + promise */
 .glance { margin: 8px 0 22px; padding: 22px 16px; border-radius: 24px; color: #fff; text-align: center; background: linear-gradient(150deg, var(--red), var(--red-deep)); box-shadow: 0 16px 36px rgba(143, 10, 31, .3); }

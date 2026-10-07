@@ -6,8 +6,8 @@ export const WA_MESSAGE =
   'Hi, I am interested in taking a soda franchise of your brand. Could you please share the details regarding the process and investment? Looking forward to your response.'
 export const WA_URL = `https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${encodeURIComponent(WA_MESSAGE)}`
 
-// Paste the Google Business "reviews" link here (Google Maps > Notica listing > Share) to show a "See all reviews on Google" button.
-export const GOOGLE_REVIEWS_URL = ''
+// Google Business "write a review" link (shown as a button in the reviews section).
+export const GOOGLE_REVIEWS_URL = 'https://g.page/r/CdzJySvuwXz2EBM/review'
 
 export const whatIs = {
   kicker: 'WHAT IS NOTICA?',

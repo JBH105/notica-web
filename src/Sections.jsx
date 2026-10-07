@@ -566,7 +566,7 @@ export function Reviews() {
               Google Reviews
             </p>
             <b>4.9</b><Stars n={5} /><span>Based on 38+ reviews</span>
-            {GOOGLE_REVIEWS_URL && <a className="g-link" href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">See all reviews on Google →</a>}
+            {GOOGLE_REVIEWS_URL && <a className="g-link" href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">Write a review on Google →</a>}
           </div>
           <div className="bars">
             {[[5, 95], [4, 5], [3, 0], [2, 0], [1, 0]].map(([s, p]) => (
