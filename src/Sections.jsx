@@ -135,6 +135,16 @@ export function Process() {
 
 /* ---------- About ---------- */
 
+// Every line below restates something already on this site (terms, support, ROI, phases).
+const promises = [
+  ['No Royalty Model', 'No Royalty Model with 100% Transparency in Terms.'],
+  ['24-Hour Query Resolution', 'Resolution to Any Query Within 24 Hours, with a dedicated helpline for every franchise.'],
+  ['Chef Training with SOP', 'Chef Training is Done with Standard Operations Procedures (SOP).'],
+  ['One Year Warranty', 'One year warranty for Notica shop service.'],
+  ['Monthly Monitoring', 'Monthly monitoring with a helpline executive assigned from the date of Inauguration.'],
+  ['Complete Setup Available', 'Complete Setup by NOTICA team is also offered, interior and exterior.'],
+]
+
 export function About() {
   return (
     <section className="sec sec-cream" id="about">
@@ -160,6 +170,21 @@ export function About() {
             <Reveal className="card why-card" key={t}><h3>{t}</h3><p>{d}</p></Reveal>
           ))}
         </div>
+        <Reveal className="glance">
+          <h3>NOTICA at a Glance</h3>
+          <ul>
+            <li><b>{locations.length}</b><span>Outlets</span></li>
+            <li><b>{new Set(locations.map((l) => l.area.trim().toLowerCase())).size}</b><span>Cities</span></li>
+            <li><b>50-60%</b><span>Gross profit margin</span></li>
+            <li><b>6-12</b><span>Months to ROI</span></li>
+          </ul>
+        </Reveal>
+        <div className="promise">
+          {promises.map(([t, d]) => (
+            <Reveal className="promise-item" key={t}><span className="pr-tick">✓</span><div><h4>{t}</h4><p>{d}</p></div></Reveal>
+          ))}
+        </div>
+
         <Reveal className="closing">
           {about.closing.map((t) => <p key={t}>{t}</p>)}
         </Reveal>
