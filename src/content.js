@@ -150,8 +150,8 @@ export const featuredProducts = [
 ]
 
 export const videos = [
-  { src: 'media/story-1.mp4', poster: 'assets/media/story-1.webp', text: 'Experience our unique soda-making process.' },
-  { src: 'media/story-2.mp4', poster: 'assets/media/story-2.webp', text: 'Experience our unique soda-making process.' },
+  { src: 'assets/media/story-2.mp4', poster: 'assets/media/story-2.webp', text: 'Experience our unique soda-making process.' },
+  { src: 'assets/media/story-1.mp4', poster: 'assets/media/story-1.webp', text: 'Experience our unique soda-making process.' },
 ]
 
 export const marketing = {
