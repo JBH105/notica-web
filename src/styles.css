@@ -225,8 +225,8 @@ button { font: inherit; cursor: pointer; }
 .snap { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 16px 20px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 .snap::-webkit-scrollbar { display: none; }
 .snap > * { scroll-snap-align: center; flex: none; }
-.video-card { width: min(82vw, 380px); margin: 0; background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line); overflow: hidden; }
-.video-box { aspect-ratio: 16/10; background: #000; position: relative; }
+.video-card { width: min(66vw, 290px); margin: 0; background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line); overflow: hidden; }
+.video-box { aspect-ratio: 9/16; background: #000; position: relative; }
 .video-box video, .video-poster, .video-poster img { width: 100%; height: 100%; object-fit: cover; }
 .video-poster { padding: 0; border: 0; background: #000; position: relative; display: block; }
 .play { position: absolute; inset: 0; margin: auto; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; background: var(--red); color: #fff; box-shadow: 0 0 0 8px rgba(200, 16, 46, .3); }
@@ -448,3 +448,5 @@ button { font: inherit; cursor: pointer; }
 .promise-item p { margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
 @media (min-width: 640px) { .glance ul { grid-template-columns: repeat(4, 1fr); } .promise { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 900px) { .promise { grid-template-columns: repeat(3, 1fr); } .glance { padding: 28px; } .glance b { font-size: 34px; } }
+
+@media (min-width: 640px) { .snap.videos { justify-content: center; } }

@@ -447,7 +447,7 @@ export function Products() {
 
 /* ---------- Video story ---------- */
 
-function VideoCard({ src, text }) {
+function VideoCard({ src, poster, text }) {
   const [playing, setPlaying] = useState(false)
   const ref = useRef(null)
   useEffect(() => { if (playing && ref.current) ref.current.play().catch(() => {}) }, [playing])
@@ -455,10 +455,10 @@ function VideoCard({ src, text }) {
     <figure className="video-card">
       <div className="video-box">
         {playing ? (
-          <video ref={ref} src={asset(src)} controls playsInline loop preload="auto" poster={asset('assets/media/vedioPartImage.webp')} />
+          <video ref={ref} src={asset(src)} controls playsInline loop preload="auto" poster={asset(poster)} />
         ) : (
           <button className="video-poster" onClick={() => setPlaying(true)} aria-label="Play video">
-            <img loading="lazy" src={asset('assets/media/vedioPartImage.webp')} alt="Soda Franchise Image" />
+            <img loading="lazy" src={asset(poster)} alt="Soda Franchise Image" />
             <span className="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>
           </button>
         )}
