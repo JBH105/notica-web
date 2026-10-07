@@ -288,7 +288,9 @@ button { font: inherit; cursor: pointer; }
 .logos img { max-height: 100%; width: auto; object-fit: contain; }
 
 /* footer */
-.footer { background: linear-gradient(160deg, var(--red-dark), #2a0a10); color: #fff; padding: 40px 0 28px; text-align: center; }
+/* Drop a photo at public/assets/footer-family.jpg and it shows behind the footer; without it the plain dark gradient (bottom layer) shows. */
+.footer { background: linear-gradient(160deg, rgba(94, 6, 19, .82), rgba(42, 10, 16, .9)), url('/assets/footer-family.jpg') center / cover no-repeat, linear-gradient(160deg, var(--red-dark), #2a0a10); color: #fff; padding: 56px 0 36px; text-align: center; }
+.footer p, .footer h5, .footer-phones { text-shadow: 0 1px 8px rgba(0, 0, 0, .45); }
 .footer-in { display: grid; justify-items: center; gap: 6px; }
 .footer-logo { width: 200px; margin: -20px 0; }
 .footer h5 { font-size: 17px; margin-top: 14px; color: #ffc27d; }
