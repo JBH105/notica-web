@@ -392,3 +392,13 @@ button { font: inherit; cursor: pointer; }
 .m-cta .support-actions { justify-content: center; }
 @media (min-width: 640px) { .m-stats { grid-template-columns: repeat(4, 1fr); } .m-models { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 900px) { .machine-hero { padding-top: 120px; } .machine-hero-in { grid-template-columns: 1.1fr 1fr; align-items: center; } .m-model .ticks { grid-template-columns: 1fr; } }
+
+.innov { margin-bottom: 36px; padding: 24px 20px; border-radius: 24px; background: var(--cream); border: 1px solid var(--line); }
+.innov-kicker { font-size: clamp(22px, 6vw, 30px); font-weight: 700; color: var(--red); line-height: 1.25; }
+.innov h3 { margin: 22px 0 12px; font-size: 20px; }
+.innov .ticks { margin: 0 0 4px; }
+.innov-quote { margin: 20px 0; padding: 18px 20px; border-radius: 18px; color: #fff; font-size: 20px; font-weight: 600; line-height: 1.45; background: linear-gradient(150deg, var(--red), var(--red-deep)); }
+.innov-sign { margin: 0; text-align: center; }
+.innov-sign b { display: block; letter-spacing: .1em; color: var(--red); }
+.innov-sign span { font-size: 14px; color: var(--muted); }
+@media (min-width: 900px) { .innov { padding: 36px; } .innov .ticks { grid-template-columns: repeat(2, 1fr); } }

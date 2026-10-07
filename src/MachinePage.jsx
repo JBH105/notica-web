@@ -6,8 +6,8 @@ const models = [
     name: '14+3',
     tag: 'Works without electricity',
     points: [
-      'No light? No problem — keeps serving even during a power cut',
-      'Fills up to 200 glasses without electricity',
+      'Keeps serving even during a power cut',
+      '150–200 glasses dispensing capacity after power interruption*',
       'Same semi-automated dispensing, minimal training for staff',
     ],
     hero: true,
@@ -24,7 +24,7 @@ const models = [
 ]
 
 const highlights = [
-  ['200', 'Glasses without electricity (14+3)'],
+  ['150–200', 'Glasses after power cut (14+3)*'],
   ['Semi', 'Automated operation'],
   ['Min.', 'Training needed'],
   ['Small', 'Space, big output'],
@@ -55,6 +55,25 @@ export default function MachinePage() {
         <ul className="m-stats">
           {highlights.map(([b, s]) => <li key={s}><b>{b}</b><span>{s}</span></li>)}
         </ul>
+
+        <section className="innov">
+          <p className="innov-kicker">Innovation that keeps your business running.</p>
+          <p>NOTICA has introduced an advanced soda dispensing innovation designed to maintain beverage service even during unexpected power interruptions. Our specially engineered soda machine can continue dispensing approximately 150–200 glasses of soda even after the electricity supply goes off, helping outlets minimize service interruptions and maintain a seamless customer experience.</p>
+          <p>This innovative system is designed with built-in pressure and dispensing technology, allowing the machine to utilize stored system capacity efficiently without depending continuously on electricity for every glass.</p>
+          <h3>Why It Matters</h3>
+          <ul className="ticks">
+            <li>150–200 glasses dispensing capacity after power interruption*</li>
+            <li>Reduced dependency on continuous electricity</li>
+            <li>Smooth and uninterrupted customer service</li>
+            <li>Helps minimize downtime during power cuts</li>
+            <li>Designed for high-volume beverage outlets</li>
+            <li>Smart engineering focused on operational efficiency</li>
+          </ul>
+          <h3>Innovation That Keeps You Serving</h3>
+          <p>At NOTICA, innovation is not just about creating great-tasting beverages—it is about developing smarter solutions for modern beverage businesses.</p>
+          <p className="innov-quote">Power may go off.<br />But the NOTICA experience doesn’t have to.</p>
+          <p className="innov-sign"><b>NOTICA SODA SHAKE</b><span>The Taste of Legends</span></p>
+        </section>
 
         <h2 className="m-title">Choose your model</h2>
         <div className="m-models">
