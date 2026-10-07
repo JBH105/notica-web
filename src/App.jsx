@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { asset, nav, footer, social, PHONE, WA_URL } from './content.js'
 import {
-  Icon, Hero, WhatIs, Process, About, Machine, Roi, Kit, Support, Apply, Products, Videos,
+  Icon, Hero, WhatIs, Process, About, Machine, Roi, Kit, Support, Apply, Faq, Products, Videos,
   Locations, Reviews, Marketing, Booking,
 } from './Sections.jsx'
 import ProductsPage from './ProductsPage.jsx'
@@ -80,6 +80,7 @@ export default function App() {
           <Kit />
           <Support />
           <Apply />
+          <Faq />
           <Products />
           <Videos />
           <Locations />

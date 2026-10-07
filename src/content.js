@@ -199,3 +199,15 @@ export const footer = {
   address: 'Shop No. 29, Syam Vatika Apartment, near Nyra Petrol Pump, Bhada, Kamrej, 394190 Surat, Gujarat, India.',
   phones: ['83474 63055', '97271 51653', '88664 43220'],
 }
+
+// FAQ: every answer restates facts already published on this site. Also emitted as FAQPage structured data.
+export const faq = [
+  ['How much investment is needed for a Notica soda franchise?', 'The Notica franchise starts at ₹8,00,000 + GST for the Basic plan and ₹8,50,000 + GST for the Pro plan. Both include the 14+3 Soda Fountain Machine and the Startup Franchise Kit.'],
+  ['What is the profit margin and ROI of a Notica franchise?', 'Notica delivers a 50-60% gross profit margin, and franchise ROI is achieved in 6-12 months. Figures are indicative and vary by location, pricing, service and demographics.'],
+  ['Is there a royalty on the Notica franchise?', 'No. Notica follows a No Royalty Model with 100% transparency in terms. Raw materials must be bought from Notica; if outside raw materials are used, a 10% royalty applies as per the terms.'],
+  ['What is the difference between the Basic and Pro plan?', 'Both plans use the 14+3 Soda Fountain Machine. The Pro plan adds power-cut capability: the machine can keep dispensing approximately 150-200 glasses of soda even after the electricity supply goes off.'],
+  ['Do I need a trained chef or skilled staff to run a Notica outlet?', 'No. Notica uses a semi-automated dispensing system, so no highly skilled chef or specialised labour is required. Chef training is provided with Standard Operating Procedures (SOP), and Notica helps you hire staff.'],
+  ['What support does Notica provide after I join?', 'Every franchise gets a dedicated helpline with resolution to any query within 24 hours, monthly monitoring by an assigned helpline executive, a day-to-day cafe maintenance planner, and a one-year warranty on Notica shop service.'],
+  ['How do I apply for a Notica franchise?', 'Contact the franchise team, get the space or shop inspected, book the franchise with a deposit of Rs. 1,00,000 and the application form, pay the 1st installment of Rs. 3,50,000 within 10 days, and the balance Rs. 3,50,000 before materials are dispatched. You can call or WhatsApp 8347463055.'],
+  ['Where are Notica outlets located?', 'Notica has outlets across Maharashtra and Gujarat, including Akola, Amravati, Nagpur, Chandrapur, Pune, Surat and many more cities. The head office is in Surat, Gujarat.'],
+]

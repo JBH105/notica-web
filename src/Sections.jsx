@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
-  asset, whatIs, GOOGLE_REVIEWS_URL, GOOGLE_SUMMARY, about, roi, kit, support, terms, featuredProducts, videos, marketing,
+  asset, whatIs, faq, GOOGLE_REVIEWS_URL, GOOGLE_SUMMARY, about, roi, kit, support, terms, featuredProducts, videos, marketing,
   booking, phases, social, PHONE, WA_URL,
 } from './content.js'
 import { locations } from './data/locations.js'
@@ -410,6 +410,38 @@ export function Apply() {
             {open ? 'Show less' : 'Read all terms'}
           </button>
         </Reveal>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- FAQ ---------- */
+
+export function Faq() {
+  useEffect(() => {
+    const el = document.createElement('script')
+    el.type = 'application/ld+json'
+    el.text = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+    })
+    document.head.appendChild(el)
+    return () => el.remove()
+  }, [])
+
+  return (
+    <section className="sec" id="faq">
+      <div className="wrap">
+        <SectionHead kicker="Got questions?" title="Frequently Asked Questions" />
+        <div className="faq-list">
+          {faq.map(([q, a]) => (
+            <details className="faq-item" key={q}>
+              <summary>{q}</summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </div>
       </div>
     </section>
   )
