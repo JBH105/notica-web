@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
-  asset, about, roi, kit, support, terms, featuredProducts, videos, marketing,
+  asset, whatIs, GOOGLE_REVIEWS_URL, about, roi, kit, support, terms, featuredProducts, videos, marketing,
   booking, phases, social, PHONE, WA_URL,
 } from './content.js'
 import { locations } from './data/locations.js'
@@ -74,6 +74,38 @@ export function Hero() {
         <li><b>60</b><span>Stores</span></li>
       </ul>
       <svg className="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c240 50 480 50 720 20s480-40 720 10V80H0z" /></svg>
+    </section>
+  )
+}
+
+/* ---------- What is Notica ---------- */
+
+const whatIcons = [
+  <svg key="a" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" /><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" /></svg>,
+  <svg key="b" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2l2.4 2 3.1-.2 1 3 2.6 1.8-1 3 1 3-2.6 1.8-1 3-3.1-.2L12 22l-2.4-2-3.1.2-1-3L3 15.4l1-3-1-3L5.5 7.6l1-3 3.1.2z" /><path d="M8.5 12l2.4 2.4 4.6-4.8" /></svg>,
+  <svg key="c" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z" /><path d="M9.5 14a2.6 2.6 0 0 0 2.5 2.5" /></svg>,
+  <svg key="d" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8" /><path d="M15 7h6v6" /></svg>,
+]
+
+export function WhatIs() {
+  return (
+    <section className="sec whatis" id="what-is-notica">
+      <div className="wrap whatis-grid">
+        <Reveal className="whatis-copy">
+          <span className="kicker">{whatIs.kicker}</span>
+          <h2>{whatIs.title}</h2>
+          {whatIs.paras.map((t) => <p key={t}>{t}</p>)}
+        </Reveal>
+        <div className="whatis-cards">
+          {whatIs.cards.map(([t, d], i) => (
+            <Reveal className="wi-card" key={t} style={{ transitionDelay: `${i * 80}ms` }}>
+              <span className="wi-ico">{whatIcons[i]}</span>
+              <h3>{t}</h3>
+              <p>{d}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
@@ -503,7 +535,14 @@ export function Reviews() {
     <section className="sec" id="reviews">
       <div className="wrap">
         <Reveal className="rating-card">
-          <div className="rating-big"><b>4.9</b><Stars n={5} /><span>Based on 38+ reviews</span></div>
+          <div className="rating-big">
+            <p className="g-badge">
+              <svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z"/><path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.9-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 12-2.1 16-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
+              Google Reviews
+            </p>
+            <b>4.9</b><Stars n={5} /><span>Based on 38+ reviews</span>
+            {GOOGLE_REVIEWS_URL && <a className="g-link" href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">See all reviews on Google →</a>}
+          </div>
           <div className="bars">
             {[[5, 95], [4, 5], [3, 0], [2, 0], [1, 0]].map(([s, p]) => (
               <div className="bar" key={s}><span>{s}</span><div><i style={{ width: `${p}%` }} /></div><span>{p}%</span></div>

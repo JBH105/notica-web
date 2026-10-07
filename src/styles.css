@@ -414,4 +414,22 @@ button { font: inherit; cursor: pointer; }
 @media (min-width: 640px) { .mach-stats { grid-template-columns: repeat(4, 1fr); } .plans { grid-template-columns: 1fr 1fr; } .why-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 900px) { .mach-top { grid-template-columns: 1fr 1fr; } .innov { padding: 40px; } }
 
-.footer-family { width: min(100%, 560px); height: auto; margin: -8px auto -6px; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
+.footer-family { display: block; width: min(100%, 620px); height: auto; margin: 0 auto 22px; border-radius: 24px; border: 3px solid rgba(255, 255, 255, .85); box-shadow: 0 18px 40px rgba(0, 0, 0, .45); }
+
+/* what is notica */
+.whatis { background: #fff; padding-top: 28px; }
+.whatis-grid { display: grid; gap: 28px; }
+.whatis-copy .kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .18em; color: var(--orange); margin-bottom: 8px; }
+.whatis-copy h2 { font-size: clamp(28px, 8vw, 42px); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+.whatis-copy h2::after { content: ''; display: block; width: 56px; height: 4px; border-radius: 4px; margin-top: 14px; background: linear-gradient(90deg, var(--red), var(--orange)); }
+.whatis-cards { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+.wi-card { position: relative; overflow: hidden; background: linear-gradient(160deg, #fff, var(--cream)); border: 1px solid var(--line); border-radius: 20px; padding: 18px 14px 16px; box-shadow: var(--shadow); }
+.wi-card::after { content: ''; position: absolute; right: -22px; top: -22px; width: 70px; height: 70px; border-radius: 50%; background: rgba(240, 130, 30, .14); }
+.wi-ico { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; margin-bottom: 12px; color: #fff; background: linear-gradient(135deg, var(--red), var(--orange)); box-shadow: 0 6px 14px rgba(200, 16, 46, .3); }
+.wi-card h3 { font-size: 15.5px; margin-bottom: 6px; color: var(--ink); }
+.wi-card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+@media (min-width: 900px) { .whatis-grid { grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; } .wi-card { padding: 22px 18px; } .wi-card h3 { font-size: 17px; } .wi-card p { font-size: 14px; } }
+
+/* google badge */
+.g-badge { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 6px; padding: 6px 14px 6px 10px; background: #fff; border: 1px solid var(--line); border-radius: 999px; font-weight: 600; font-size: 13.5px; color: var(--ink); box-shadow: 0 2px 8px rgba(0, 0, 0, .06); }
+.g-link { display: inline-block; margin-top: 10px; font-weight: 600; font-size: 14px; color: var(--red); text-decoration: none; }

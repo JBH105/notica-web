@@ -6,6 +6,25 @@ export const WA_MESSAGE =
   'Hi, I am interested in taking a soda franchise of your brand. Could you please share the details regarding the process and investment? Looking forward to your response.'
 export const WA_URL = `https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${encodeURIComponent(WA_MESSAGE)}`
 
+// Paste the Google Business "reviews" link here (Google Maps > Notica listing > Share) to show a "See all reviews on Google" button.
+export const GOOGLE_REVIEWS_URL = ''
+
+export const whatIs = {
+  kicker: 'WHAT IS NOTICA?',
+  title: 'More Than a Beverage. It’s a NOTICA Experience.',
+  paras: [
+    'NOTICA Soda Shake is a beverage-focused brand created for people who love refreshing flavours, exciting combinations and memorable experiences.',
+    'Our menu brings together a diverse selection of sodas, shakes and signature beverages, served through a consistent brand experience across our outlets.',
+    'We continuously explore new flavour combinations and beverage concepts while keeping our focus on taste, quality, presentation and customer experience.',
+  ],
+  cards: [
+    ['Flavour Innovation', 'Creative combinations designed for today’s beverage lovers.'],
+    ['Quality Focus', 'A consistent approach to ingredients, preparation and presentation.'],
+    ['Refreshing Experience', 'Beverages made to refresh, energise and create memorable moments.'],
+    ['Growing Brand', 'A scalable beverage concept designed for customers and franchise partners.'],
+  ],
+}
+
 export const asset = (p) => `${import.meta.env.BASE_URL}${p}`
 
 export const social = {
