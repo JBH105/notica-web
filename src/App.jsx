@@ -1,16 +1,12 @@
 import { useEffect, useState } from 'react'
 import { asset, nav, footer, social, PHONE, WA_URL } from './content.js'
 import {
-  Icon, Hero, Process, About, Roi, Kit, Support, Apply, Products, Videos,
+  Icon, Hero, Process, About, Machine, Roi, Kit, Support, Apply, Products, Videos,
   Locations, Reviews, Marketing, Booking,
 } from './Sections.jsx'
 import ProductsPage from './ProductsPage.jsx'
-import MachinePage from './MachinePage.jsx'
 
-const getRoute = () => {
-  const h = window.location.hash
-  return h === '#/products' ? 'products' : h === '#/machine' ? 'machine' : 'home'
-}
+const getRoute = () => (window.location.hash === '#/products' ? 'products' : 'home')
 
 export default function App() {
   const [route, setRoute] = useState(getRoute())
@@ -73,13 +69,12 @@ export default function App() {
 
       {route === 'products' ? (
         <ProductsPage />
-      ) : route === 'machine' ? (
-        <MachinePage />
       ) : (
         <main>
           <Hero />
           <Process />
           <About />
+          <Machine />
           <Roi />
           <Kit />
           <Support />

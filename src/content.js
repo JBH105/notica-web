@@ -17,6 +17,7 @@ export const social = {
 export const nav = [
   { label: 'Home', href: '#top' },
   { label: 'About Us', href: '#about' },
+  { label: 'Machine', href: '#machine' },
   { label: 'ROI', href: '#roi' },
   { label: 'Franchise Kit', href: '#kit' },
   { label: 'Locations', href: '#locations' },
@@ -124,7 +125,7 @@ export const terms = [
 ]
 
 export const featuredProducts = [
-  ['Services/FountainMachine.png', '14+3 Soda Fountain Machine', '#/machine'],
+  ['Services/FountainMachine.png', '14+3 Soda Fountain Machine', '#machine'],
   ['Services/fridge-photoroom.png', 'Fridge vertical(300 Ltr)'],
   ['Franchise-Kit/TV-1.webp', 'TV Included'],
 ]

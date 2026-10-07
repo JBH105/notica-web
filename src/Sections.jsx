@@ -145,6 +145,94 @@ export function About() {
   )
 }
 
+/* ---------- Machine ---------- */
+
+const basicPoints = [
+  'Semi-automated dispensing system',
+  'Minimal training for staff',
+  'Maximum output within minimal space',
+  'Bold red NOTICA aesthetic with premium branding',
+]
+const proPoints = [
+  'Everything in Basic',
+  '150–200 glasses dispensing capacity after power interruption*',
+  'Built-in pressure and dispensing technology',
+  'Smooth service even during power cuts',
+]
+const whyMatters = [
+  '150–200 glasses dispensing capacity after power interruption*',
+  'Reduced dependency on continuous electricity',
+  'Smooth and uninterrupted customer service',
+  'Helps minimize downtime during power cuts',
+  'Designed for high-volume beverage outlets',
+  'Smart engineering focused on operational efficiency',
+]
+
+export function Machine() {
+  return (
+    <section className="sec machine" id="machine">
+      <div className="wrap">
+        <div className="mach-top">
+          <Reveal className="mach-copy">
+            <span className="kicker">The Machine</span>
+            <h2>14+3 <em>Soda Fountain Machine</em></h2>
+            <p>{about.why[2][1]}</p>
+            <p>{about.closing[1]}</p>
+            <div className="hero-actions">
+              <a className="btn btn-light" href={WA_URL} target="_blank" rel="noopener noreferrer">{Icon.wa} Enquire on WhatsApp</a>
+              <a className="btn btn-ghost" href={`tel:${PHONE}`}>{Icon.phone} Call Now</a>
+            </div>
+          </Reveal>
+          <Reveal className="mach-photo">
+            <div className="mach-glow" aria-hidden="true" />
+            <img loading="lazy" src={asset('assets/Services/FountainMachine.png')} alt="Notica 14+3 Soda Fountain Machine" />
+          </Reveal>
+        </div>
+
+        <ul className="mach-stats">
+          <li><b>14+3</b><span>Dispensing taps</span></li>
+          <li><b>150–200</b><span>Glasses after a power cut*</span></li>
+          <li><b>Semi</b><span>Automated operation</span></li>
+          <li><b>Min.</b><span>Training needed</span></li>
+        </ul>
+
+        <h3 className="mach-h">Choose your plan</h3>
+        <div className="plans">
+          <Reveal className="plan">
+            <p className="plan-name">Basic</p>
+            <p className="plan-price">₹8,00,000<small> + GST</small></p>
+            <p className="plan-sub">14+3 Soda Fountain Machine</p>
+            <ul>{basicPoints.map((p) => <li key={p}>{p}</li>)}</ul>
+            <a className="btn btn-ghost" href={WA_URL} target="_blank" rel="noopener noreferrer">Choose Basic</a>
+          </Reveal>
+          <Reveal className="plan pro">
+            <span className="plan-badge">Power-cut ready</span>
+            <p className="plan-name">Pro</p>
+            <p className="plan-price">₹8,50,000<small> + GST</small></p>
+            <p className="plan-sub">14+3 Soda Fountain Machine</p>
+            <ul>{proPoints.map((p) => <li key={p}>{p}</li>)}</ul>
+            <a className="btn btn-light" href={WA_URL} target="_blank" rel="noopener noreferrer">Choose Pro</a>
+          </Reveal>
+        </div>
+
+        <Reveal className="innov">
+          <p className="innov-kicker">Innovation that keeps your business running.</p>
+          <p>NOTICA has introduced an advanced soda dispensing innovation designed to maintain beverage service even during unexpected power interruptions. Our specially engineered soda machine can continue dispensing approximately 150–200 glasses of soda even after the electricity supply goes off, helping outlets minimize service interruptions and maintain a seamless customer experience.</p>
+          <p>This innovative system is designed with built-in pressure and dispensing technology, allowing the machine to utilize stored system capacity efficiently without depending continuously on electricity for every glass.</p>
+          <h3>Why It Matters</h3>
+          <ul className="why-grid">
+            {whyMatters.map((t, i) => <li key={t}><span>{String(i + 1).padStart(2, '0')}</span>{t}</li>)}
+          </ul>
+          <h3>Innovation That Keeps You Serving</h3>
+          <p>At NOTICA, innovation is not just about creating great-tasting beverages—it is about developing smarter solutions for modern beverage businesses.</p>
+          <p className="innov-quote">Power may go off.<br />But the NOTICA experience doesn’t have to.</p>
+          <p className="innov-sign"><b>NOTICA SODA SHAKE</b><span>The Taste of Legends</span></p>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
 /* ---------- ROI ---------- */
 
 export function Roi() {
@@ -248,7 +336,11 @@ export function Apply() {
       <div className="wrap">
         <Reveal className="price-card">
           <p className="price-lead">Apply Now &amp;<br />Get All This at Only</p>
-          <div className="price"><span className="rupee">₹</span>8,00,000<span className="gst"> + GST *</span></div>
+          <div className="price-plans">
+            <div><span>Basic</span><b>₹8,00,000</b></div>
+            <div className="pro"><span>Pro</span><b>₹8,50,000</b></div>
+          </div>
+          <p className="price-gst">+ GST *</p>
           <p className="price-note">*GST applicable as per government norms.</p>
           <a className="btn btn-light" href={`tel:${PHONE}`}>{Icon.phone} Franchise Helpline | {PHONE}</a>
         </Reveal>
