@@ -1,12 +1,12 @@
 // Copied verbatim from the original site (map.js)
 export const locations = [
   {
-    id: "loc-1",
-    title: "Nagpur - Jaripatka Road",
-    owner: "Dineshbhai",
-    area: "Nagpur",
+    id: "loc-8",
+    title: "Jawahar Nagar Road Sitala Mata Chowk, Akola",
+    owner: "Rajubhai",
+    area: "Akola",
     iframeSrc:
-      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3720.3203525382937!2d79.08836967526075!3d21.179429280507836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDEwJzQ2LjAiTiA3OcKwMDUnMjcuNCJF!5e0!3m2!1sen!2sin!4v1746598119349!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3732.0975993806924!2d77.01089907524778!3d20.706260980863508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDQyJzIyLjUiTiA3N8KwMDAnNDguNSJF!5e0!3m2!1sen!2sin!4v1748068891561!5m2!1sen!2sin",
   },
   {
     id: "loc-2",
@@ -55,14 +55,6 @@ export const locations = [
     area: "Yavatmal",
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3740.0486960497137!2d78.11895407523897!3d20.380881981111273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDIyJzUxLjIiTiA3OMKwMDcnMTcuNSJF!5e0!3m2!1sen!2sin!4v1748068144663!5m2!1sen!2sin",
-  },
-  {
-    id: "loc-8",
-    title: "Jawahar Nagar Road Sitala Mata Chowk, Akola",
-    owner: "Rajubhai",
-    area: "Akola",
-    iframeSrc:
-      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3732.0975993806924!2d77.01089907524778!3d20.706260980863508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDQyJzIyLjUiTiA3N8KwMDAnNDguNSJF!5e0!3m2!1sen!2sin!4v1748068891561!5m2!1sen!2sin",
   },
   {
     id: "loc-9",
@@ -479,5 +471,13 @@ export const locations = [
     area: "Akola",
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3357.7134261634233!2d77.02512977524808!3d20.715396180856715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDQyJzU1LjQiTiA3N8KwMDEnMzkuNyJF!5e1!3m2!1sen!2sin!4v1791020045821!5m2!1sen!2sin",
+  },
+  {
+    id: "loc-1",
+    title: "Nagpur - Jaripatka Road",
+    owner: "Dineshbhai",
+    area: "Nagpur",
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3720.3203525382937!2d79.08836967526075!3d21.179429280507836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDEwJzQ2LjAiTiA3OcKwMDUnMjcuNCJF!5e0!3m2!1sen!2sin!4v1746598119349!5m2!1sen!2sin",
   },
 ];
