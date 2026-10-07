@@ -9,6 +9,10 @@ export const WA_URL = `https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${e
 // Google Business "write a review" link (shown as a button in the reviews section).
 export const GOOGLE_REVIEWS_URL = 'https://g.page/r/CdzJySvuwXz2EBM/review'
 
+// Shown until the live Google numbers load (and if they cannot load).
+// bars = bar length for 5,4,3,2,1 stars as % of the longest bar; Google's API does not return the split, so adjust these from the Google listing.
+export const GOOGLE_SUMMARY = { rating: 4.7, count: 265, bars: [100, 7, 2, 2, 3] }
+
 export const whatIs = {
   kicker: 'WHAT IS NOTICA?',
   title: 'More Than a Beverage. It’s a NOTICA Experience.',

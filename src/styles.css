@@ -457,3 +457,20 @@ button { font: inherit; cursor: pointer; }
 .g-score b { font-size: 64px; line-height: 1; font-weight: 800; color: var(--red); }
 .g-score > div { text-align: left; display: grid; gap: 4px; }
 .g-score span { font-size: 14px; color: var(--muted); }
+
+/* google-style review summary */
+.g-card { max-width: 560px; text-align: left; padding: 22px 22px 24px; background: #fff; }
+.g-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.g-head h3 { margin: 0; font-size: 20px; font-weight: 600; color: var(--ink); }
+.g-head .g-badge { margin: 0; box-shadow: none; }
+.g-body { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+.g-bars { display: grid; gap: 10px; }
+.g-bar { display: grid; grid-template-columns: 12px 1fr; gap: 12px; align-items: center; font-size: 13.5px; color: #5f6368; }
+.g-bar div { height: 9px; border-radius: 9px; background: #ececec; overflow: hidden; }
+.g-bar i { display: block; height: 100%; border-radius: 9px; background: #fbbc04; }
+.g-card .g-score { display: grid; justify-items: center; gap: 4px; margin: 0; }
+.g-card .g-score b { font-size: 56px; font-weight: 500; line-height: 1; color: var(--ink); }
+.g-card .stars i.full, .g-card .stars i.half { color: #fbbc04; opacity: 1; }
+.g-card .stars i.half { opacity: .6; }
+.g-count { font-size: 14px; font-weight: 500; color: #0b7a75; }
+.g-card .g-link { margin-top: 18px; }
