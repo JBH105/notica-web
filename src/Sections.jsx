@@ -275,12 +275,20 @@ export function Products() {
       <div className="wrap">
         <SectionHead title="Our Products" />
         <div className="prod-grid">
-          {featuredProducts.map(([src, name]) => (
-            <Reveal className="prod" key={name}>
-              <div className="prod-img"><img loading="lazy" src={asset(`assets/${src}`)} alt={name} /></div>
-              <h3>{name}</h3>
-            </Reveal>
-          ))}
+          {featuredProducts.map(([src, name, href]) => {
+            const body = (
+              <>
+                <div className="prod-img"><img loading="lazy" src={asset(`assets/${src}`)} alt={name} /></div>
+                <h3>{name}</h3>
+                {href && <span className="prod-more">View machine details →</span>}
+              </>
+            )
+            return (
+              <Reveal className="prod" key={name}>
+                {href ? <a className="prod-link" href={href}>{body}</a> : body}
+              </Reveal>
+            )
+          })}
         </div>
         <div className="center"><a className="btn btn-red" href="#/products">Show More</a></div>
       </div>

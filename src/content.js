@@ -124,7 +124,7 @@ export const terms = [
 ]
 
 export const featuredProducts = [
-  ['Services/FountainMachine.png', '14+2 Soda Fountain Machine'],
+  ['Services/FountainMachine.png', '14+3 Soda Fountain Machine', '#/machine'],
   ['Services/fridge-photoroom.png', 'Fridge vertical(300 Ltr)'],
   ['Franchise-Kit/TV-1.webp', 'TV Included'],
 ]

@@ -5,25 +5,30 @@ import {
   Locations, Reviews, Marketing, Booking,
 } from './Sections.jsx'
 import ProductsPage from './ProductsPage.jsx'
+import MachinePage from './MachinePage.jsx'
 
-const isProducts = () => window.location.hash === '#/products'
+const getRoute = () => {
+  const h = window.location.hash
+  return h === '#/products' ? 'products' : h === '#/machine' ? 'machine' : 'home'
+}
 
 export default function App() {
-  const [productsView, setProductsView] = useState(isProducts())
+  const [route, setRoute] = useState(getRoute())
+  const productsView = route !== 'home'
   const [menu, setMenu] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const onHash = () => {
-      const p = isProducts()
-      setProductsView(p)
+      const r = getRoute()
+      setRoute(r)
       setMenu(false)
-      requestAnimationFrame(() => {
+      setTimeout(() => {
         const id = window.location.hash.replace('#', '')
-        const el = !p && id && !id.startsWith('/') ? document.getElementById(id) : null
+        const el = r === 'home' && id && !id.startsWith('/') ? document.getElementById(id) : null
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
         else window.scrollTo(0, 0)
-      })
+      }, 60)
     }
     const onScroll = () => setScrolled(window.scrollY > 12)
     window.addEventListener('hashchange', onHash)
@@ -66,8 +71,10 @@ export default function App() {
         </nav>
       </div>
 
-      {productsView ? (
+      {route === 'products' ? (
         <ProductsPage />
+      ) : route === 'machine' ? (
+        <MachinePage />
       ) : (
         <main>
           <Hero />
