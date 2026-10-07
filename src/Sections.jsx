@@ -4,7 +4,6 @@ import {
   booking, phases, social, PHONE, WA_URL,
 } from './content.js'
 import { locations } from './data/locations.js'
-import reviews from './data/reviews.json'
 
 /* ---------- small helpers ---------- */
 
@@ -555,34 +554,41 @@ const Stars = ({ n }) => (
   </span>
 )
 
+// Live numbers come from /api/google-reviews (a Vercel function that asks Google Places).
+// Until that is configured (or if it fails) the last known figures from the old site are shown.
+const FALLBACK_RATING = { rating: 4.9, count: 38 }
+
 export function Reviews() {
+  const [data, setData] = useState({ ...FALLBACK_RATING, live: false })
+
+  useEffect(() => {
+    let alive = true
+    fetch('/api/google-reviews')
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((j) => {
+        if (alive && j && typeof j.rating === 'number' && typeof j.count === 'number') setData({ rating: j.rating, count: j.count, live: true })
+      })
+      .catch(() => {})
+    return () => { alive = false }
+  }, [])
+
   return (
     <section className="sec" id="reviews">
       <div className="wrap">
-        <Reveal className="rating-card">
-          <div className="rating-big">
-            <p className="g-badge">
-              <svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z"/><path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.9-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 12-2.1 16-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
-              Google Reviews
-            </p>
-            <b>4.9</b><Stars n={5} /><span>Based on 38+ reviews</span>
-            {GOOGLE_REVIEWS_URL && <a className="g-link" href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">Write a review on Google →</a>}
+        <Reveal className="g-card">
+          <p className="g-badge">
+            <svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z"/><path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.9-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 12-2.1 16-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
+            Google Reviews
+          </p>
+          <div className="g-score">
+            <b>{data.rating.toFixed(1)}</b>
+            <div>
+              <Stars n={data.rating} />
+              <span>Based on {data.count}{data.live ? '' : '+'} Google reviews</span>
+            </div>
           </div>
-          <div className="bars">
-            {[[5, 95], [4, 5], [3, 0], [2, 0], [1, 0]].map(([s, p]) => (
-              <div className="bar" key={s}><span>{s}</span><div><i style={{ width: `${p}%` }} /></div><span>{p}%</span></div>
-            ))}
-          </div>
+          {GOOGLE_REVIEWS_URL && <a className="g-link" href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">Write a review on Google →</a>}
         </Reveal>
-      </div>
-      <div className="snap reviews">
-        {reviews.map((r, i) => (
-          <blockquote className="review" key={i}>
-            <Stars n={r.stars} />
-            <p>“{r.text}”</p>
-            <footer>{r.name ? `- ${r.name}` : '-'}</footer>
-          </blockquote>
-        ))}
       </div>
     </section>
   )

@@ -450,3 +450,10 @@ button { font: inherit; cursor: pointer; }
 @media (min-width: 900px) { .promise { grid-template-columns: repeat(3, 1fr); } .glance { padding: 28px; } .glance b { font-size: 34px; } }
 
 @media (min-width: 640px) { .snap.videos { justify-content: center; } }
+
+/* google rating card (live) */
+.g-card { max-width: 520px; margin: 0 auto; text-align: center; background: var(--cream); border: 1px solid var(--line); border-radius: 26px; padding: 26px 20px; box-shadow: var(--shadow); }
+.g-score { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 8px; }
+.g-score b { font-size: 64px; line-height: 1; font-weight: 800; color: var(--red); }
+.g-score > div { text-align: left; display: grid; gap: 4px; }
+.g-score span { font-size: 14px; color: var(--muted); }
