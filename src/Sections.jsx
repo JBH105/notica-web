@@ -1,0 +1,485 @@
+import { useEffect, useMemo, useRef, useState } from 'react'
+import {
+  asset, about, roi, kit, support, terms, featuredProducts, videos, marketing,
+  booking, phases, social, PHONE, WA_URL,
+} from './content.js'
+import { locations } from './data/locations.js'
+import reviews from './data/reviews.json'
+
+/* ---------- small helpers ---------- */
+
+export function Reveal({ children, className = '', as: Tag = 'div', ...rest }) {
+  const ref = useRef(null)
+  const [shown, setShown] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el || !('IntersectionObserver' in window)) { setShown(true); return }
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { setShown(true); io.disconnect() }
+    }, { threshold: 0.12 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+  return <Tag ref={ref} className={`reveal ${shown ? 'in' : ''} ${className}`} {...rest}>{children}</Tag>
+}
+
+const Icon = {
+  wa: (<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.9 3.4.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>),
+  phone: (<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>),
+  dl: (<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>),
+  pin: (<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>),
+  star: (<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5L9 8.9z"/></svg>),
+  fb: (<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z"/></svg>),
+  ig: (<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>),
+  yt: (<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.8 15.5v-7l6 3.5z"/></svg>),
+}
+export { Icon }
+
+const SectionHead = ({ kicker, title, children }) => (
+  <Reveal className="sec-head">
+    {kicker && <span className="kicker">{kicker}</span>}
+    <h2>{title}</h2>
+    {children}
+  </Reveal>
+)
+
+/* ---------- Hero ---------- */
+
+export function Hero() {
+  return (
+    <section className="hero" id="top">
+      <div className="hero-bg" aria-hidden="true" />
+      <div className="wrap hero-grid">
+        <div className="hero-copy">
+          <p className="hero-eyebrow">THE TASTE OF LEGENDS</p>
+          <h1>
+            Soda Shake<sup>TM</sup>
+            <span>Franchise</span>
+          </h1>
+          <div className="hero-actions">
+            <a className="btn btn-light" href={WA_URL} target="_blank" rel="noopener noreferrer">{Icon.wa} WhatsApp Us</a>
+            <a className="btn btn-ghost" href={`tel:${PHONE}`}>{Icon.phone} Call Now</a>
+          </div>
+        </div>
+        <div className="hero-art">
+          <img className="hero-main" src={asset('assets/hero/juice-9-2.png')} alt="Notica soda shake" fetchPriority="high" />
+          <img className="hero-leaf l1" src={asset('assets/hero/s10-mint-1.png')} alt="" aria-hidden="true" />
+          <img className="hero-leaf l2" src={asset('assets/hero/s10-lemmon-2.png')} alt="" aria-hidden="true" />
+        </div>
+      </div>
+      <ul className="hero-stats wrap">
+        <li><b>50-60%</b><span>Profit margin</span></li>
+        <li><b>6-12</b><span>Months ROI</span></li>
+        <li><b>No</b><span>Royalty model</span></li>
+        <li><b>60</b><span>Stores</span></li>
+      </ul>
+      <svg className="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c240 50 480 50 720 20s480-40 720 10V80H0z" /></svg>
+    </section>
+  )
+}
+
+/* ---------- Setup process ---------- */
+
+export function Process() {
+  return (
+    <section className="sec" id="process">
+      <div className="wrap">
+        <SectionHead kicker="How it works" title="Franchise Application Setup Process" />
+        <ol className="steps">
+          {phases.map((p) => (
+            <Reveal as="li" key={p.n} className="step">
+              <span className="step-n">{p.n}</span>
+              <div>
+                <h3>Phase {p.n}</h3>
+                <p>{p.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- About ---------- */
+
+export function About() {
+  return (
+    <section className="sec sec-cream" id="about">
+      <div className="wrap">
+        <SectionHead title="About Us" />
+        <Reveal className="about-top">
+          <img className="about-img" loading="lazy" src={asset('assets/About-Cert/new image.png')} alt="Glass of Beverage" />
+          <div>
+            {about.paras.map((t) => <p key={t}>{t}</p>)}
+          </div>
+        </Reveal>
+        <Reveal as="ul" className="ticks">
+          {about.points.map((t) => <li key={t}>{t}</li>)}
+        </Reveal>
+        <div className="vm">
+          <Reveal className="card vm-card"><h3>Our Vision</h3><p>{about.vision}</p></Reveal>
+          <Reveal className="card vm-card"><h3>Our Mission</h3><p>{about.mission}</p></Reveal>
+        </div>
+
+        <SectionHead title={about.whyTitle} />
+        <div className="why">
+          {about.why.map(([t, d]) => (
+            <Reveal className="card why-card" key={t}><h3>{t}</h3><p>{d}</p></Reveal>
+          ))}
+        </div>
+        <Reveal className="closing">
+          {about.closing.map((t) => <p key={t}>{t}</p>)}
+        </Reveal>
+
+        <Reveal className="certs">
+          <h3>Our Certifications</h3>
+          <div className="cert-row">
+            {about.certs.map(([src, alt]) => (
+              <div className="cert" key={src}><img loading="lazy" src={asset(`assets/${src}`)} alt={alt} /></div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- ROI ---------- */
+
+export function Roi() {
+  return (
+    <section className="sec roi" id="roi">
+      <div className="wrap">
+        <Reveal className="roi-hero">
+          <p className="roi-title">{roi.title}</p>
+          <div className="roi-percent">{roi.percent}</div>
+          <p className="roi-label">{roi.label}</p>
+          <p className="roi-desc">{roi.desc}</p>
+          <p className="roi-time">{roi.timeline}</p>
+          <p className="roi-tag">{roi.tag}</p>
+          <a className="btn btn-light" href={asset('noticaProduct.pdf')} download="noticaProduct.pdf">{Icon.dl} Get Started Today</a>
+        </Reveal>
+
+        <SectionHead title={roi.projectionTitle}><p className="muted">{roi.projectionText}</p></SectionHead>
+        <div className="cases">
+          {roi.cases.map((c, i) => (
+            <Reveal className={`case ${i === 2 ? 'best' : ''}`} key={c.name}>
+              <header><h3>{c.name}</h3><span>{c.time}</span></header>
+              <dl>
+                <div><dt>Daily Sale:</dt><dd>{c.sale}</dd></div>
+                <div><dt>Revenue:</dt><dd>{c.revenue}</dd></div>
+                <div><dt>Expenses:</dt><dd>{c.expenses}</dd></div>
+                <div className="profit"><dt>Profit:</dt><dd>{c.profit}</dd></div>
+              </dl>
+            </Reveal>
+          ))}
+        </div>
+        <p className="disclaimer"><b>Disclaimer:</b>{roi.disclaimer}</p>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Franchise kit + training ---------- */
+
+export function Kit() {
+  return (
+    <section className="sec" id="kit">
+      <div className="wrap">
+        <SectionHead title={<>Startup <em>Franchise Kit</em></>}>
+          <p className="muted">{kit.intro}</p>
+          <a className="btn btn-red" href={asset('newNotica.pdf')} download="newNotica.pdf">{Icon.dl} Download PDF</a>
+        </SectionHead>
+        <div className="kit-grid">
+          {kit.items.map(([src, label]) => (
+            <Reveal className="kit-item" key={label}>
+              <div className="kit-img"><img loading="lazy" src={asset(`assets/${src}`)} alt={label} /></div>
+              <span>{label}</span>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal className="train">
+          <div className="card train-card"><h2>Owner Training</h2></div>
+          <div className="card hire-card">
+            <h2>We Help You Hire</h2>
+            <h3>Complete Guide On</h3>
+            <ul className="ticks">{kit.hireList.map((t) => <li key={t}>{t}</li>)}</ul>
+          </div>
+          <div className="card planner-card">
+            <h3>Cafe Maintenance Planner</h3>
+            <p>{kit.planner}</p>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Support ---------- */
+
+export function Support() {
+  return (
+    <section className="sec sec-cream" id="support">
+      <div className="wrap support">
+        <Reveal>
+          <h2>{support.title}</h2>
+          <h3 className="support-sub">{support.sub}</h3>
+          <p>{support.text}</p>
+          <div className="support-actions">
+            <a className="btn btn-red" href={`tel:${PHONE}`}>{Icon.phone} Phone Support</a>
+            <a className="btn btn-wa" href={WA_URL} target="_blank" rel="noopener noreferrer">{Icon.wa} WhatsApp</a>
+          </div>
+          <p className="hours">{support.hours}</p>
+        </Reveal>
+        <Reveal className="support-art"><img loading="lazy" src={asset('assets/help/help.webp')} alt="Franchise support" /></Reveal>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Price + Terms ---------- */
+
+export function Apply() {
+  const [open, setOpen] = useState(false)
+  return (
+    <section className="sec apply" id="terms">
+      <div className="wrap">
+        <Reveal className="price-card">
+          <p className="price-lead">Apply Now &amp;<br />Get All This at Only</p>
+          <div className="price"><span className="rupee">₹</span>8,00,000<span className="gst"> + GST *</span></div>
+          <p className="price-note">*GST applicable as per government norms.</p>
+          <a className="btn btn-light" href={`tel:${PHONE}`}>{Icon.phone} Franchise Helpline | {PHONE}</a>
+        </Reveal>
+
+        <Reveal className="terms">
+          <h3 className="terms-title">Terms &amp; Conditions</h3>
+          <ul className={`terms-list ${open ? 'open' : ''}`}>
+            {terms.map((t, i) => <li key={t}><span>{i + 1}</span><p>{t}</p></li>)}
+          </ul>
+          <button className="link-btn" onClick={() => setOpen(!open)} aria-expanded={open}>
+            {open ? 'Show less' : 'Read all terms'}
+          </button>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Products teaser ---------- */
+
+export function Products() {
+  return (
+    <section className="sec sec-cream" id="products">
+      <div className="wrap">
+        <SectionHead title="Our Products" />
+        <div className="prod-grid">
+          {featuredProducts.map(([src, name]) => (
+            <Reveal className="prod" key={name}>
+              <div className="prod-img"><img loading="lazy" src={asset(`assets/${src}`)} alt={name} /></div>
+              <h3>{name}</h3>
+            </Reveal>
+          ))}
+        </div>
+        <div className="center"><a className="btn btn-red" href="#/products">Show More</a></div>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Video story ---------- */
+
+function VideoCard({ src, text }) {
+  const [playing, setPlaying] = useState(false)
+  const ref = useRef(null)
+  useEffect(() => { if (playing && ref.current) ref.current.play().catch(() => {}) }, [playing])
+  return (
+    <figure className="video-card">
+      <div className="video-box">
+        {playing ? (
+          <video ref={ref} src={asset(src)} controls playsInline loop preload="auto" poster={asset('assets/media/vedioPartImage.webp')} />
+        ) : (
+          <button className="video-poster" onClick={() => setPlaying(true)} aria-label="Play video">
+            <img loading="lazy" src={asset('assets/media/vedioPartImage.webp')} alt="Soda Franchise Image" />
+            <span className="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>
+          </button>
+        )}
+      </div>
+      <figcaption>{text}</figcaption>
+    </figure>
+  )
+}
+
+export function Videos() {
+  return (
+    <section className="sec" id="story">
+      <div className="wrap">
+        <SectionHead title="Our Soda Franchise Story" />
+      </div>
+      <div className="snap videos">
+        {videos.map((v, i) => <VideoCard key={i} {...v} />)}
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Locations ---------- */
+
+const formatArea = (a) => a.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/\b\w/g, (c) => c.toUpperCase())
+const PAGE = 6
+
+function Store({ loc }) {
+  const [map, setMap] = useState(false)
+  const owner = (loc.owner || '').trim()
+  return (
+    <article className="store">
+      <div className="store-info">
+        <span className="store-pin">{Icon.pin}</span>
+        <div>
+          <h3>{loc.title}</h3>
+          {owner && <p>Owner: {owner}</p>}
+        </div>
+      </div>
+      {map ? (
+        <iframe title={loc.title} src={loc.iframeSrc} loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" />
+      ) : (
+        <button className="map-btn" onClick={() => setMap(true)}>View map</button>
+      )}
+    </article>
+  )
+}
+
+export function Locations() {
+  const [area, setArea] = useState('__all__')
+  const [limit, setLimit] = useState(PAGE)
+
+  const areas = useMemo(() => {
+    const m = new Map()
+    locations.forEach((l) => {
+      const a = l.area || 'Other'
+      m.set(a, (m.get(a) || 0) + 1)
+    })
+    return [...m.entries()].sort((a, b) => b[1] - a[1] || formatArea(a[0]).localeCompare(formatArea(b[0])))
+  }, [])
+
+  const items = area === '__all__' ? locations : locations.filter((l) => (l.area || 'Other') === area)
+  const pick = (a) => { setArea(a); setLimit(PAGE) }
+
+  return (
+    <section className="sec sec-cream" id="locations">
+      <div className="wrap">
+        <SectionHead title="Our Locations"><p className="muted">Explore our key locations with interactive maps</p></SectionHead>
+      </div>
+      <div className="chips" role="group" aria-label="Filter locations by area">
+        {[['__all__', locations.length], ...areas].map(([a, n]) => (
+          <button key={a} className={`chip ${a === area ? 'on' : ''}`} aria-pressed={a === area} onClick={() => pick(a)}>
+            {a === '__all__' ? 'All Locations' : formatArea(a)} <b>{n}</b>
+          </button>
+        ))}
+      </div>
+      <div className="wrap">
+        <div className="stores">
+          {items.slice(0, limit).map((l) => <Store key={l.id} loc={l} />)}
+        </div>
+        {limit < items.length && (
+          <div className="center"><button className="btn btn-red" onClick={() => setLimit(limit + PAGE)}>Show more ({items.length - limit})</button></div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Reviews ---------- */
+
+const Stars = ({ n }) => (
+  <span className="stars" aria-label={`${n} out of 5`}>
+    {[1, 2, 3, 4, 5].map((i) => <i key={i} className={n >= i ? 'full' : n >= i - 0.5 ? 'half' : ''}>{Icon.star}</i>)}
+  </span>
+)
+
+export function Reviews() {
+  return (
+    <section className="sec" id="reviews">
+      <div className="wrap">
+        <Reveal className="rating-card">
+          <div className="rating-big"><b>4.9</b><Stars n={5} /><span>Based on 38+ reviews</span></div>
+          <div className="bars">
+            {[[5, 95], [4, 5], [3, 0], [2, 0], [1, 0]].map(([s, p]) => (
+              <div className="bar" key={s}><span>{s}</span><div><i style={{ width: `${p}%` }} /></div><span>{p}%</span></div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+      <div className="snap reviews">
+        {reviews.map((r, i) => (
+          <blockquote className="review" key={i}>
+            <Stars n={r.stars} />
+            <p>“{r.text}”</p>
+            <footer>{r.name ? `- ${r.name}` : '-'}</footer>
+          </blockquote>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Marketing ---------- */
+
+export function Marketing() {
+  return (
+    <section className="sec sec-cream" id="reel">
+      <div className="wrap reel">
+        <Reveal className="card reel-card">
+          <h2>{marketing.title}</h2>
+          <p>{marketing.text}</p>
+          <a className="btn btn-red" href={social.facebook} target="_blank" rel="noopener noreferrer">{marketing.cta}</a>
+        </Reveal>
+        <Reveal className="card reel-card">
+          <h3>{marketing.inspoTitle}</h3>
+          <p>{marketing.inspoText}</p>
+          <div className="reel-links">
+            <a href={social.instagram} target="_blank" rel="noopener noreferrer">{Icon.ig} beverages_notica</a>
+            <a href={social.youtube} target="_blank" rel="noopener noreferrer">{Icon.yt} Notica</a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Booking ---------- */
+
+function CopyRow({ label, value }) {
+  const [ok, setOk] = useState(false)
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(value); setOk(true); setTimeout(() => setOk(false), 1400) } catch { /* clipboard unavailable */ }
+  }
+  return (
+    <div className="acc-row">
+      <div><dt>{label}</dt><dd>{value}</dd></div>
+      <button onClick={copy} aria-label={`Copy ${label}`}>{ok ? 'Copied' : 'Copy'}</button>
+    </div>
+  )
+}
+
+export function Booking() {
+  return (
+    <section className="sec" id="booking">
+      <div className="wrap">
+        <SectionHead title={booking.title} />
+        <Reveal className="card acc">
+          <h3>{booking.heading}</h3>
+          <p className="acc-sub">{booking.sub}</p>
+          <dl>{booking.rows.map(([k, v]) => <CopyRow key={k} label={k} value={v} />)}</dl>
+        </Reveal>
+        <Reveal className="accept">
+          <h3>WE ALSO ACCEPT</h3>
+          <div className="logos">
+            {booking.accept.map(([f, alt]) => <div key={f}><img loading="lazy" src={asset(`assets/Bank-Logos/${f}`)} alt={`${alt} logo`} /></div>)}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}

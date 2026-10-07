@@ -1,0 +1,487 @@
+{
+ "categories": [
+  {
+   "id": "ice-Mojhito",
+   "title": "Ice & Mojhito",
+   "icon": "assets/CategoryImage/Ice-Mojhito.webp",
+   "items": [
+    {
+     "name": "Blue Curacao"
+    },
+    {
+     "name": "Mint Mojhito"
+    },
+    {
+     "name": "Water Melon"
+    },
+    {
+     "name": "Blue Berry Ice"
+    },
+    {
+     "name": "Chilli Mojhito"
+    },
+    {
+     "name": "Falsa Ice"
+    },
+    {
+     "name": "Guava Ice"
+    },
+    {
+     "name": "Green mango Ice"
+    },
+    {
+     "name": "Lemon Ice"
+    },
+    {
+     "name": "Lichy Ice"
+    },
+    {
+     "name": "Pineapple Ice"
+    },
+    {
+     "name": " Cranberre"
+    },
+    {
+     "name": "Strawberry Ice Milk"
+    },
+    {
+     "name": "Jeera Masala Ice"
+    },
+    {
+     "name": "Kulfi Falooda"
+    },
+    {
+     "name": "American Ice"
+    },
+    {
+     "name": "Coffe "
+    },
+    {
+     "name": "Pan Pasand "
+    },
+    {
+     "name": "Kashmiri Gulab"
+    },
+    {
+     "name": "Blue Lagoon"
+    },
+    {
+     "name": "Pinaromance Mocktail"
+    },
+    {
+     "name": "Passion Fruit Mocktail"
+    },
+    {
+     "name": "Kala khatta Ice"
+    },
+    {
+     "name": "Wine Grapes "
+    },
+    {
+     "name": "Red Hot Mocktail "
+    },
+    {
+     "name": "Angrybee Mocktail"
+    },
+    {
+     "name": "Beer Coffee"
+    },
+    {
+     "name": "Beer Malt"
+    },
+    {
+     "name": "Beer Chocolate"
+    },
+    {
+     "name": "Beer Craneberry"
+    },
+    {
+     "name": "Beer Ginger"
+    },
+    {
+     "name": "Kokum"
+    },
+    {
+     "name": "Chocolate"
+    },
+    {
+     "name": "Orange"
+    },
+    {
+     "name": "Pineapple"
+    },
+    {
+     "name": "Litchi"
+    }
+   ]
+  },
+  {
+   "id": "ice",
+   "title": "Ice",
+   "icon": "assets/CategoryImage/Ice.webp",
+   "items": [
+    {
+     "name": "verry Berry Ice"
+    },
+    {
+     "name": "Kiwi"
+    },
+    {
+     "name": "Mixed Fruit Ice"
+    },
+    {
+     "name": "Mosambi"
+    },
+    {
+     "name": "Blackcurrant"
+    },
+    {
+     "name": "Royal Dryfruit"
+    },
+    {
+     "name": "Pina Colada"
+    },
+    {
+     "name": "Green mango Ice"
+    },
+    {
+     "name": "Lemon Ice"
+    }
+   ]
+  },
+  {
+   "id": "milk",
+   "title": "Milk",
+   "icon": "assets/CategoryImage/Milk.webp",
+   "items": [
+    {
+     "name": "Rose Milk & water"
+    },
+    {
+     "name": "Kesar Pista Milk"
+    },
+    {
+     "name": "Badam Pista Milk"
+    },
+    {
+     "name": "Mava Malai Milk"
+    },
+    {
+     "name": "Kesar Rajbhog milk"
+    },
+    {
+     "name": "Mango Milk"
+    },
+    {
+     "name": "Butter Scotch Milk"
+    },
+    {
+     "name": "Cocaa Chocolate Milk"
+    },
+    {
+     "name": "Badam Pista Milk"
+    },
+    {
+     "name": "Chickoo"
+    },
+    {
+     "name": "Kesar"
+    },
+    {
+     "name": "Pista"
+    },
+    {
+     "name": "Anjeer"
+    },
+    {
+     "name": "Badamashake"
+    },
+    {
+     "name": "Coco"
+    }
+   ]
+  },
+  {
+   "id": "soda",
+   "title": "Soda Flav",
+   "icon": "assets/CategoryImage/Soda-Flav.webp",
+   "items": [
+    {
+     "name": "Mango (Ghatt)"
+    },
+    {
+     "name": "Strawberry (Ghatt)"
+    },
+    {
+     "name": "Cola"
+    },
+    {
+     "name": "Jeera Masala"
+    },
+    {
+     "name": "Kiwi"
+    },
+    {
+     "name": "Kala khatta"
+    },
+    {
+     "name": "Blue Berry"
+    },
+    {
+     "name": "Orange"
+    },
+    {
+     "name": "Beer"
+    },
+    {
+     "name": "Pineapple"
+    },
+    {
+     "name": "Fresh Lime"
+    },
+    {
+     "name": "Green Mango"
+    },
+    {
+     "name": "Clear lemon"
+    },
+    {
+     "name": "Fudina masala"
+    },
+    {
+     "name": "Anar"
+    },
+    {
+     "name": "Red Jamfal"
+    }
+   ]
+  },
+  {
+   "id": "franchise-products",
+   "title": "Franchise products",
+   "icon": "assets/CategoryImage/franchise-kit.webp",
+   "items": [
+    {
+     "name": "14+2 Soda Fountain Machine",
+     "image": "assets/Services/FountainMachine.png"
+    },
+    {
+     "name": "Interior Design ACP Sheet(400 sq.ft.)",
+     "image": "assets/interior_design.webp"
+    },
+    {
+     "name": "Co2 Gas Bottels 30kg <br /> 2 Pieces",
+     "image": "assets/product/carbon.webp"
+    },
+    {
+     "name": "Fridge vertical(300 Ltr)",
+     "image": "assets/Services/fridge-photoroom.png"
+    },
+    {
+     "name": "5 Baby chair. 10 adult chair",
+     "image": "assets/Services/chair.webp"
+    },
+    {
+     "name": "TV Included",
+     "image": "assets/Franchise-Kit/TV-1.webp"
+    },
+    {
+     "name": "Counter (Marble)6- to 8 feet x I .5 feet as per location",
+     "image": "assets/Services/counter.webp"
+    },
+    {
+     "name": "Syrup Tanks <br /> 14 Pieces",
+     "image": "assets/product/syrupTank.webp"
+    },
+    {
+     "name": "Led Board Included",
+     "image": "assets/Franchise-Kit/LED-3.webp"
+    },
+    {
+     "name": "CCTV Camera Included",
+     "image": "assets/Franchise-Kit/cctv.webp"
+    },
+    {
+     "name": "500 Litre Water Tank",
+     "image": "assets/Franchise-Kit/RealTank.webp"
+    },
+    {
+     "name": "Ceiling Lights <br />6 Pieces",
+     "image": "assets/product/ceilingLight.webp"
+    },
+    {
+     "name": "Eco vinyl stickers",
+     "image": "assets/Services/stickers.webp"
+    },
+    {
+     "name": "Juicer Mixer",
+     "image": "assets/Franchise-Kit/juicer.webp"
+    },
+    {
+     "name": "Water Pump",
+     "image": "assets/Franchise-Kit/Tank1.webp"
+    },
+    {
+     "name": "Co2 Regulator",
+     "image": "assets/product/Regulator-Co2.webp"
+    },
+    {
+     "name": "Ice Box",
+     "image": "assets/product/iceBox.webp"
+    },
+    {
+     "name": "Drawer",
+     "image": "assets/product/Drawer.webp"
+    },
+    {
+     "name": "Dustbin 100 Ltr",
+     "image": "assets/product/dustbin.webp"
+    },
+    {
+     "name": "Ice Crusher",
+     "image": "assets/product/iceCrusher.webp"
+    },
+    {
+     "name": "PCB",
+     "image": "assets/product/pcb-circuit.webp"
+    },
+    {
+     "name": "3 Watt 2:PINK 2:BLUE 2:GREEN <br /> 6 Pieces",
+     "image": "assets/product/3-watt.jpg"
+    },
+    {
+     "name": "Fuljar glass <br /> 12 Pieces",
+     "image": "assets/product/fuljhar.webp"
+    },
+    {
+     "name": "Ice Glass <br /> 12 Pieces",
+     "image": "assets/product/iceGlass.webp"
+    },
+    {
+     "name": "Jar <br /> 6 pieces",
+     "image": "assets/product/BottleJar.webp"
+    },
+    {
+     "name": "Milk Shake Glass <br /> 12 Pieces",
+     "image": "assets/product/Milk.webp"
+    },
+    {
+     "name": "Cash Box",
+     "image": "assets/product/cashBox.webp"
+    },
+    {
+     "name": "Cocktail Glass <br /> 6 Pieces",
+     "image": "assets/product/cockTailnew.webp"
+    },
+    {
+     "name": "Faluda Glass <br /> 6 Pieces",
+     "image": "assets/product/faludaGlass.webp"
+    },
+    {
+     "name": "Morter & Pastel Wooden",
+     "image": "assets/product/pastel.webp"
+    },
+    {
+     "name": "Sensor",
+     "image": "assets/product/sensor.webp"
+    },
+    {
+     "name": "Glass Trey <br /> 2 Pieces",
+     "image": "assets/product/tray.webp"
+    },
+    {
+     "name": "Water Jar <br /> 2 Pieces",
+     "image": "assets/product/water.webp"
+    },
+    {
+     "name": "20 Ltr Bucket",
+     "image": "assets/product/Bucket.webp"
+    },
+    {
+     "name": "Adjustable Spammers",
+     "image": "assets/product/spammers.webp"
+    },
+    {
+     "name": "Big Plastcics Funnels <br /> 6 pieces",
+     "image": "assets/product/funnel.webp"
+    },
+    {
+     "name": "Double Net Water Strainer",
+     "image": "assets/product/waterStrainer.webp"
+    },
+    {
+     "name": "Fuljar Small glass <br /> 6 Pieces",
+     "image": "assets/product/smallFuljhar.webp"
+    },
+    {
+     "name": "Jamun Shots Glass <br /> 6 Pieces",
+     "image": "assets/product/JamunShots.jpg"
+    },
+    {
+     "name": "1 Ltr Jug 500 ML JUG",
+     "image": "assets/product/Jug.webp"
+    },
+    {
+     "name": "Cap Bottle <br /> 2 pieces",
+     "image": "assets/product/capBottle.webp"
+    },
+    {
+     "name": "Clamp <br /> 5 Pieces",
+     "image": "assets/product/clampsNew.webp"
+    },
+    {
+     "name": "Co2 Regulator Ring <br /> 2 Pieces",
+     "image": "assets/product/regulatorRing.webp"
+    },
+    {
+     "name": "Connectors <br /> 2 set",
+     "image": "assets/product/connectors.webp"
+    },
+    {
+     "name": "Knife",
+     "image": "assets/product/Knife.webp"
+    },
+    {
+     "name": "Lemon Basket",
+     "image": "assets/product/fruitBasket.webp"
+    },
+    {
+     "name": "Plier",
+     "image": "assets/product/Plier.webp"
+    },
+    {
+     "name": "Screw Driver",
+     "image": "assets/product/screwDriver.webp"
+    },
+    {
+     "name": "Spoon <br /> 6 Pieces",
+     "image": "assets/product/spoon.webp"
+    },
+    {
+     "name": "Steel Soup Ladel",
+     "image": "assets/product/soupladel.webp"
+    },
+    {
+     "name": "Testers",
+     "image": "assets/product/tester.webp"
+    },
+    {
+     "name": "30 - 60 ML",
+     "image": "assets/product/30-60.webp"
+    },
+    {
+     "name": "Glass ML",
+     "image": "assets/product/ml-glass.webp"
+    },
+    {
+     "name": "O Rings <br /> 30 Pieces",
+     "image": "assets/product/rubber-rings.webp"
+    },
+    {
+     "name": "Tep Rol",
+     "image": "assets/product/tapRoll.webp"
+    }
+   ]
+  }
+ ]
+}
