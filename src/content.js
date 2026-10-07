@@ -58,7 +58,7 @@ export const phases = [
 
 export const about = {
   paras: [
-    'Surat Food And Beverages is a leading innovator in high-quality flavors for the soft drink industry. Based in Surat, we specialize in crafting mouth-watering soda flavors and milkshakes that delight customers globally.',
+    'SURAT FOOD AND BEVERAGES PRIVATE LIMITED is a leading innovator in high-quality flavors for the soft drink industry. Based in Surat, we specialize in crafting mouth-watering soda flavors and milkshakes that delight customers globally.',
     'At Notica, our mission is to establish ourselves as a trusted, premium, and rapidly growing brand in India’s beverage market. We do not just serve beverages — we deliver an exceptional experience built on quality, consistency, and trust for every customer.',
     'Our belief is simple: “Great Taste Creates Great Memories.” With this philosophy, we are committed to providing superior products, premium service, and memorable experiences every day. Our goal is to create a strong and lasting connection with our customers through every sip they enjoy.',
   ],
