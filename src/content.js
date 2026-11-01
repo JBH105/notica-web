@@ -219,6 +219,6 @@ export const notProvided = {
     'Electrical Work and Material',
     'CCTV Cable and Work',
     'Transportation',
-    'The store opening will be done by the owner, and all dairy products will have to be purchased by him.',
+    'The store opening will be done by the owner, and all dairy and bakery products will have to be purchased by him.',
   ],
 }
