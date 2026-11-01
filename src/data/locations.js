@@ -17,12 +17,12 @@ export const locations = [
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3726.938620239297!2d77.75970777525349!3d20.91478898070616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU0JzUzLjIiTiA3N8KwNDUnNDQuMiJF!5e0!3m2!1sen!2sin!4v1746597906285!5m2!1sen!2sin",
   },
   {
-    id: "loc-64",
-    title: "Palash Line Panchavati Flyover Gadge Nagar, Amravati",
-    owner: "",
-    area: "Amravati",
+    id: "loc-3",
+    title: "Mohadi Rd, Nutan Varsha Colony, Ganapati Nagar, Jalgaon",
+    owner: "Rohitbhai",
+    area: "Jalgaon",
     iframeSrc:
-      "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d931.5419567756628!2d77.7675386!3d20.9457744!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU2JzQ0LjUiTiA3N8KwNDYnMDMuNSJF!5e0!3m2!1sen!2sin!4v1746598920097!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4418.8029738717105!2d75.55728747525544!3d20.985341180653165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU5JzA3LjIiTiA3NcKwMzMnMzUuNSJF!5e1!3m2!1sen!2sin!4v1793526902986!5m2!1sen!2sin",
   },
   {
     id: "loc-4",
@@ -505,12 +505,11 @@ export const locations = [
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4419.665431577801!2d77.76205517525453!3d20.956166980675025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU3JzIyLjIiTiA3N8KwNDUnNTIuNyJF!5e1!3m2!1sen!2sin!4v1793526829081!5m2!1sen!2sin",
   },
   {
-    id: "loc-3",
-    title: "Mohadi Rd, Nutan Varsha Colony, Ganapati Nagar, Jalgaon",
-    owner: "Rohitbhai",
-    area: "Jalgaon",
+    id: "loc-64",
+    title: "Palash Line Panchavati Flyover Gadge Nagar, Amravati",
+    owner: "",
+    area: "Amravati",
     iframeSrc:
-      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4418.8029738717105!2d75.55728747525544!3d20.985341180653165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU5JzA3LjIiTiA3NcKwMzMnMzUuNSJF!5e1!3m2!1sen!2sin!4v1793526902986!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d931.5419567756628!2d77.7675386!3d20.9457744!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU2JzQ0LjUiTiA3N8KwNDYnMDMuNSJF!5e0!3m2!1sen!2sin!4v1746598920097!5m2!1sen!2sin",
   },
-
 ];
