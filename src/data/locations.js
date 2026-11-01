@@ -484,7 +484,7 @@ export const locations = [
     id: "loc-61",
     title: "Rani Sati Dham Mandir Rd, New Radhakisan Plots, AKOLA",
     owner: "Pavanbhai",
-    area: "AKOLA",
+    area: "Akola",
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4427.03609449766!2d76.99565407524781!3d20.705239680864373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDQyJzE4LjkiTiA3NsKwNTknNTMuNiJF!5e1!3m2!1sen!2sin!4v1793526682201!5m2!1sen!2sin",
   },
