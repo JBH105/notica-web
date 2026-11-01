@@ -17,7 +17,7 @@ export const locations = [
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3726.938620239297!2d77.75970777525349!3d20.91478898070616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU0JzUzLjIiTiA3N8KwNDUnNDQuMiJF!5e0!3m2!1sen!2sin!4v1746597906285!5m2!1sen!2sin",
   },
   {
-    id: "loc-3",
+    id: "loc-64",
     title: "Palash Line Panchavati Flyover Gadge Nagar, Amravati",
     owner: "",
     area: "Amravati",
@@ -505,7 +505,7 @@ export const locations = [
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4419.665431577801!2d77.76205517525453!3d20.956166980675025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU3JzIyLjIiTiA3N8KwNDUnNTIuNyJF!5e1!3m2!1sen!2sin!4v1793526829081!5m2!1sen!2sin",
   },
   {
-    id: "loc-64",
+    id: "loc-3",
     title: "Mohadi Rd, Nutan Varsha Colony, Ganapati Nagar, Jalgaon",
     owner: "Rohitbhai",
     area: "Jalgaon",
