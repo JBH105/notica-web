@@ -480,4 +480,37 @@ export const locations = [
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3720.3203525382937!2d79.08836967526075!3d21.179429280507836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDEwJzQ2LjAiTiA3OcKwMDUnMjcuNCJF!5e0!3m2!1sen!2sin!4v1746598119349!5m2!1sen!2sin",
   },
+  {
+    id: "loc-61",
+    title: "Rani Sati Dham Mandir Rd, New Radhakisan Plots, AKOLA",
+    owner: "Pavanbhai",
+    area: "AKOLA",
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4427.03609449766!2d76.99565407524781!3d20.705239680864373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDQyJzE4LjkiTiA3NsKwNTknNTMuNiJF!5e1!3m2!1sen!2sin!4v1793526682201!5m2!1sen!2sin",
+  },
+  {
+    id: "loc-62",
+    title: "Sakora Rd, Grinarnagar, Nandgaon",
+    owner: "Dayabhai",
+    area: "Nandgaon",
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4438.279880126128!2d74.66747037523734!3d20.31675168116032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDE5JzAwLjMiTiA3NMKwNDAnMTIuMiJF!5e1!3m2!1sen!2sin!4v1793526756226!5m2!1sen!2sin",
+  },
+  {
+    id: "loc-63",
+    title: "Shegaon - Rahatgaon Rd, Ashiyad Colony, Siddhivinayak Nagar, Amravati",
+    owner: "Pranavbhai",
+    area: "Amravati",
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4419.665431577801!2d77.76205517525453!3d20.956166980675025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU3JzIyLjIiTiA3N8KwNDUnNTIuNyJF!5e1!3m2!1sen!2sin!4v1793526829081!5m2!1sen!2sin",
+  },
+  {
+    id: "loc-64",
+    title: "Mohadi Rd, Nutan Varsha Colony, Ganapati Nagar, Jalgaon",
+    owner: "Rohitbhai",
+    area: "Jalgaon",
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4418.8029738717105!2d75.55728747525544!3d20.985341180653165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU5JzA3LjIiTiA3NcKwMzMnMzUuNSJF!5e1!3m2!1sen!2sin!4v1793526902986!5m2!1sen!2sin",
+  },
+
 ];
