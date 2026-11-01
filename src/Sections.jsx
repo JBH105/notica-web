@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
-  asset, whatIs, faq, GOOGLE_REVIEWS_URL, GOOGLE_SUMMARY, about, roi, kit, support, terms, featuredProducts, videos, marketing,
+  asset, whatIs, faq, notProvided, GOOGLE_REVIEWS_URL, GOOGLE_SUMMARY, about, roi, kit, support, terms, featuredProducts, videos, marketing,
   booking, phases, social, PHONE, WA_URL,
 } from './content.js'
 import { locations } from './data/locations.js'
@@ -354,6 +354,28 @@ export function Kit() {
           <div className="card planner-card">
             <h3>Cafe Maintenance Planner</h3>
             <p>{kit.planner}</p>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
+/* ---------- Not provided ---------- */
+
+export function NotProvided() {
+  return (
+    <section className="sec sec-cream" id="not-provided">
+      <div className="wrap">
+        <Reveal className="np">
+          <div className="np-sign" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="84" height="84"><circle cx="32" cy="32" r="28" fill="#fff" stroke="#c8102e" strokeWidth="8" /><path d="M13 51 51 13" stroke="#c8102e" strokeWidth="8" strokeLinecap="round" /></svg>
+          </div>
+          <div className="np-body">
+            <h2>{notProvided.title}</h2>
+            <ul>
+              {notProvided.items.map((t) => <li key={t}>{t}</li>)}
+            </ul>
           </div>
         </Reveal>
       </div>

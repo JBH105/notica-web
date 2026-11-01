@@ -211,3 +211,14 @@ export const faq = [
   ['How do I apply for a Notica franchise?', 'Contact the franchise team, get the space or shop inspected, book the franchise with a deposit of Rs. 1,00,000 and the application form, pay the 1st installment of Rs. 3,50,000 within 10 days, and the balance Rs. 3,50,000 before materials are dispatched. You can call or WhatsApp 8347463055.'],
   ['Where are Notica outlets located?', 'Notica has outlets across Maharashtra and Gujarat, including Akola, Amravati, Nagpur, Chandrapur, Pune, Surat and many more cities. The head office is in Surat, Gujarat.'],
 ]
+
+export const notProvided = {
+  title: 'Notica Not Provided',
+  items: [
+    'Plumbing Work and Material',
+    'Electrical Work and Material',
+    'CCTV Cable and Work',
+    'Transportation',
+    'The store opening will be done by the owner, and all dairy products will have to be purchased by him.',
+  ],
+}
