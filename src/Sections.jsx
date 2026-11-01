@@ -331,7 +331,7 @@ export function Kit() {
   return (
     <section className="sec" id="kit">
       <div className="wrap">
-        <SectionHead title={<>Startup <em>Franchise Kit</em></>}>
+        {/* <SectionHead title={<>Startup <em>Franchise Kit</em></>}>
           <p className="muted">{kit.intro}</p>
           <a className="btn btn-red" href={asset('Notica-The-Taste-of-Legends.pdf')} download="Notica-The-Taste-of-Legends.pdf">{Icon.dl} Download PDF</a>
         </SectionHead>
@@ -342,7 +342,7 @@ export function Kit() {
               <span>{label}</span>
             </Reveal>
           ))}
-        </div>
+        </div> */}
 
         <Reveal className="train">
           <div className="card train-card"><h2>Owner Training</h2></div>
